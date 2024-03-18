@@ -2,6 +2,10 @@ var ultimo = "0";
 var reset = document.getElementById('reset');
 var jogo = document.getElementById('jogo');
 var cell = jogo.getElementsByTagName('div');
+let winner = null;
+let jugador1 = prompt("¿Como te llamas Jugador1?");
+let jugador2 = prompt("¿Como te llamas Jugador2?");
+
 var bruno = {
     init: function () {
         var jogo = document.getElementById('jogo');
@@ -9,9 +13,12 @@ var bruno = {
             var cell = document.createElement('div');
             cell.onclick = function () {
         	    // variavel publica dentro do obj?
-        	    ultimo = (ultimo == "x") ? 0 : "x";
-        	    this.innerHTML = ultimo;
+                if(this.innerHTML.trim()===""){
+
+                ultimo = (ultimo == "x") ? 0 : "x";
+                this.innerHTML = ultimo;
         	    bruno.checkWin();	
+                }
             };
             jogo.appendChild(cell);
         }
@@ -37,7 +44,13 @@ var bruno = {
                     cells, i, 
                     (i + 3), 1))
             {
-                alert('Horizontal');
+                if (winner == "x"){
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                }else{
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+
+                }
+                
             }
                 
             // Check for vertical matches
@@ -46,7 +59,14 @@ var bruno = {
                     cells, i,
                     (i + 7), 3))
             {
-                alert('Vertical');   
+
+                if (winner == "x"){
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                }else{
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+
+                }
+
             }
             
             // Check for diagonal matches
@@ -55,7 +75,12 @@ var bruno = {
                     cells, i,
                     (i + 9), 4))
             {
-                alert('Diagonal');
+                if (winner == "x"){
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                }else{
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+
+                }
             }
              
             if (isTopRightCorner
@@ -63,7 +88,12 @@ var bruno = {
                     cells, i,
                     (i + 5), 2))
             {
-                alert('Diagonal');
+                if (winner == "x"){
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                }else{
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+
+                }
             }            
         }
     },
@@ -72,6 +102,7 @@ var bruno = {
         var cell = jogo.getElementsByTagName('div');
         for ( j = 0 ; j < cell.length ; j++ ) {
             cell[j].innerHTML = "";
+            cell[j].classList.remove('pintar');
         }
     },
     checkCells: function(cells, index, limit, step) {
@@ -96,6 +127,12 @@ var bruno = {
             
         // If we reached this point, the entire sequence
         // of cells hold the same character(s).
+        winner = sequenceChar;
+        for(var i = index; i < limit; i += step){
+            console.log(cells[i]);
+            cells[i].classList.add('pintar');
+        }
+     
         return true;
     }
 };
@@ -104,5 +141,6 @@ bruno.init();
 
 reset.onclick = function () {
     bruno.reset();
+
 };
 
