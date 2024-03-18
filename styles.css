@@ -1,0 +1,49 @@
+body{
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(9,44,193,1) 58%, rgba(0,212,255,1) 100%);
+    color: #FFFF;
+}
+
+#jogo {
+    
+    width: 500px;
+    height: 500px;
+    margin: auto;
+
+    /*GRADIENTE DEL FONDO DEL TABLERO GLASSMORPISM*/
+
+        background: rgba( 251, 5, 5, 0.3 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 5px );
+        -webkit-backdrop-filter: blur( 5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#jogo div {
+    display: inline-block;
+    vertical-align: top;
+    width: 164px;
+    height: 164px;
+    border: #FFFF 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 80px;
+
+
+}
+#reset {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 153px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    margin: auto;
+}
