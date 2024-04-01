@@ -6,6 +6,9 @@ let winner = null;
 let jugador1 = prompt("¿Como te llamas Jugador1?");
 let jugador2 = prompt("¿Como te llamas Jugador2?");
 
+
+
+
 var bruno = {
     init: function () {
         var jogo = document.getElementById('jogo');
@@ -61,9 +64,9 @@ var bruno = {
             {
 
                 if (winner == "x"){
-                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN VERTICAL');
                 }else{
-                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN VERTICAL');
 
                 }
 
@@ -76,9 +79,9 @@ var bruno = {
                     (i + 9), 4))
             {
                 if (winner == "x"){
-                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN DIAGONAL');
                 }else{
-                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN DIAGONAL');
 
                 }
             }
@@ -89,9 +92,9 @@ var bruno = {
                     (i + 5), 2))
             {
                 if (winner == "x"){
-                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN HORIZONTAL');
+                    alert('GANADOR '+ jugador1 +" "+ winner + '   EN DIAGONAL');
                 }else{
-                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN HORIZONTAL');
+                    alert('GANADOR '+ jugador2 +" "+ winner + '   EN DIAGONAL');
 
                 }
             }            
